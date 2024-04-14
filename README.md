@@ -10,3 +10,10 @@ Implementing Three Types of Morris Traverse with Go
 
 
 
+
+
+
+对于二叉树的非递归遍历，前序和后序使用迭代法比较方便记忆和书写，中序则是采用morris方便
+- 前序迭代逻辑（中左右）：加入中节点，出栈，将右节点、左节点入栈，栈非空执行循环
+- 后续迭代逻辑（左右中）：调整前序的左右节点入站顺序从右、左变为左、右，之后reverse数组，即可得到结果
+- 中序morris遍历逻辑：记录mostright,如果mostright指向空，说明第一次来到，指回cur;如果mostright指向cur,第二次来到，加入res,并把指针指回空。记录时机：对与来到自己两次的，在第二次打印
